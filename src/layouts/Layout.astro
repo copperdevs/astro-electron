@@ -25,7 +25,7 @@ import { ClientRouter } from "astro:transitions";
 
     <!-- page info -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{pageTitle} // astro-electron</title>
+    <title>{pageTitle} // astro-electron | platform: {process.platform}</title>
     <meta name="description" content={description} />
 
     <!-- trans ition-->
@@ -34,7 +34,7 @@ import { ClientRouter } from "astro:transitions";
 
   <body>
     <div class=`titlebar ${process.platform === "win32" ? "win" : "mac"}`>
-      {pageTitle} // astro-electron | {process.platform}
+      {pageTitle} // astro-electron | platform: {process.platform}
     </div>
     <slot />
   </body>
