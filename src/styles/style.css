@@ -19,27 +19,6 @@ body {
   overflow: hidden;
 }
 
-* {
-  user-select: none;
-}
-
-.selectable {
-  user-select: text;
-}
-
-.scrollable {
-  overflow-y: scroll;
-  /* Internet Explorer 10+ */
-  -ms-overflow-style: none;
-  /* Firefox */
-  scrollbar-width: none;
-}
-
-.scrollable::-webkit-scrollbar {
-  /* Safari and Chrome */
-  display: none;
-}
-
 .center {
   align-items: center;
   /* max-width: fit-content; */

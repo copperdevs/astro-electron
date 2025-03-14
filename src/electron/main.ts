@@ -5,9 +5,14 @@ app.whenReady().then(async () => {
   const win = new BrowserWindow({
     title: "Main window",
     backgroundMaterial: "mica",
+    titleBarStyle: "hidden",
+
     webPreferences: {
       preload: url.fileURLToPath(new URL("preload.mjs", import.meta.url)),
+      devTools: false,
     },
+
+    ...(process.platform !== "darwin" ? { titleBarOverlay: true } : {}),
   });
 
   // You can use `process.env.VITE_DEV_SERVER_URL` when the vite command is called `serve`

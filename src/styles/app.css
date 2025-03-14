@@ -1,0 +1,31 @@
+.titlebar {
+  height: 30px;
+  background: transparent;
+  color: white;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-left: 8px;
+  app-region: drag;
+}
+
+* {
+  user-select: none;
+}
+
+.selectable {
+  user-select: text;
+}
+
+.scrollable {
+  overflow-y: scroll;
+  /* Internet Explorer 10+ */
+  -ms-overflow-style: none;
+  /* Firefox */
+  scrollbar-width: none;
+}
+
+.scrollable::-webkit-scrollbar {
+  /* Safari and Chrome */
+  display: none;
+}
