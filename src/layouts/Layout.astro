@@ -38,9 +38,7 @@ import { nativeTheme } from "electron";
     <div
       class=`titlebar themeing ${process.platform === "win32" ? "win" : "mac"}`
     >
-      {pageTitle} // astro-electron | platform: {process.platform} | {
-        Electron.nativeTheme
-      }
+      {pageTitle} // astro-electron | platform: {process.platform}
     </div>
     <slot />
   </body>
