@@ -5,8 +5,15 @@
   display: flex;
   justify-content: left;
   align-items: center;
-  margin-left: 8px;
   app-region: drag;
+}
+
+.titlebar.win {
+  margin-left: 8px;
+}
+
+.titlebar.mac {
+  margin-left: 64px;
 }
 
 * {

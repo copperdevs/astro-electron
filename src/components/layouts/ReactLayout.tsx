@@ -10,6 +10,7 @@ export function ReactLayout({ children }: { children: ReactNode }) {
       grayColor="slate"
       radius="large"
       appearance={ThemeColors.Dark}
+      hasBackground={false}
     >
       <Toaster theme="dark" richColors expand visibleToasts={16} />
       {children}

@@ -4,12 +4,12 @@ import { app, BrowserWindow } from "electron";
 app.whenReady().then(async () => {
   const win = new BrowserWindow({
     title: "Main window",
-    backgroundMaterial: "mica",
+    backgroundMaterial: "acrylic",
     titleBarStyle: "hidden",
 
     webPreferences: {
       preload: url.fileURLToPath(new URL("preload.mjs", import.meta.url)),
-      devTools: false,
+      // devTools: false,
     },
 
     ...(process.platform !== "darwin" ? { titleBarOverlay: true } : {}),

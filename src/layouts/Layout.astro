@@ -30,18 +30,12 @@ import { ClientRouter } from "astro:transitions";
 
     <!-- trans ition-->
     <ClientRouter />
-
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&family=Rubik:wght@300..900&display=swap"
-      rel="stylesheet"
-    />
   </head>
 
   <body>
-    <div class="titlebar">Cool titlebar</div>
+    <div class=`titlebar ${process.platform === "win32" ? "win" : "mac"}`>
+      {pageTitle} // astro-electron | {process.platform}
+    </div>
     <slot />
   </body>
 </html>
