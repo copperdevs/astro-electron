@@ -12,6 +12,8 @@ import "@/styles/style.css";
 import "@/styles/app.css";
 
 import { ClientRouter } from "astro:transitions";
+
+import { nativeTheme } from "electron";
 ---
 
 <!doctype html>
@@ -32,9 +34,13 @@ import { ClientRouter } from "astro:transitions";
     <ClientRouter />
   </head>
 
-  <body>
-    <div class=`titlebar ${process.platform === "win32" ? "win" : "mac"}`>
-      {pageTitle} // astro-electron | platform: {process.platform}
+  <body class="themeing">
+    <div
+      class=`titlebar themeing ${process.platform === "win32" ? "win" : "mac"}`
+    >
+      {pageTitle} // astro-electron | platform: {process.platform} | {
+        Electron.nativeTheme
+      }
     </div>
     <slot />
   </body>

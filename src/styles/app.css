@@ -1,20 +1,46 @@
 .titlebar {
   height: 30px;
-  background: transparent;
-  color: white;
   display: flex;
   justify-content: left;
   align-items: center;
   app-region: drag;
 }
 
+@media (prefers-color-scheme: dark) {
+  .titlebar.themeing {
+    /* grabbed from https://www.radix-ui.com/colors for slate*/
+    background: #111113;
+    color: #edeef0;
+  }
+
+  body.themeing {
+    /* grabbed from https://www.radix-ui.com/colors for slate*/
+    background: #111113;
+    color: #edeef0;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .titlebar.themeing {
+    /* grabbed from https://www.radix-ui.com/colors for slate */
+    background: #edeef0;
+    color: #111113;
+  }
+
+  body.themeing {
+    /* grabbed from https://www.radix-ui.com/colors for slate */
+    background: #edeef0;
+    color: #111113;
+  }
+}
+
 .titlebar.win {
-  margin-left: 8px;
+  padding-left: 8px;
 }
 
 .titlebar.mac {
-  margin-left: 64px;
-  margin-top: -2px;
+  padding-left: 64px;
+  padding-top: -2px;
 }
 
 * {
