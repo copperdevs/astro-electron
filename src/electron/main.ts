@@ -20,6 +20,8 @@ app.whenReady().then(async () => {
           },
         }
       : {}),
+
+    trafficLightPosition: { x: 10, y: 12 },
   });
 
   // You can use `process.env.VITE_DEV_SERVER_URL` when the vite command is called `serve`
