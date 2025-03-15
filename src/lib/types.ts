@@ -1,9 +1,8 @@
 export type PageProps = {
-  // page info
-  title: string;
-  description: string;
+  // app info
+  appTitle: string;
 
-  // extra info
+  // app info
   platform: Platform;
 };
 

@@ -20,7 +20,7 @@ export function ReactLayout({
       hasBackground={true}
     >
       <Toaster theme="dark" richColors expand visibleToasts={16} />
-      <Titlebar props={{ title: props.title, platform: props.platform }}>
+      <Titlebar props={{ title: props.appTitle, platform: props.platform }}>
         <TitlebarDropdowns />
       </Titlebar>
       {children}

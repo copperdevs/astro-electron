@@ -1,5 +1,5 @@
 ---
-import IndexPage from "@/components/pages/IndexPage";
+import ClickerPage from "@/components/pages/ClickerPage";
 import Layout from "@/layouts/Layout.astro";
 import { createPageProps } from "@/lib";
 
@@ -9,5 +9,5 @@ const props = createPageProps({
 ---
 
 <Layout pageProps={props}>
-  <IndexPage pageProps={props} client:load />
+  <ClickerPage pageProps={props} client:load />
 </Layout>

@@ -4,16 +4,9 @@ export function goTo(path: string) {
   window.location.href = path;
 }
 
-export function createPageProps({
-  title,
-  description,
-}: {
-  title: string;
-  description: string;
-}): PageProps {
+export function createPageProps({ appTitle }: { appTitle: string }): PageProps {
   return {
-    title: title,
-    description: description,
+    appTitle: appTitle,
     platform: process.platform,
   } as PageProps;
 }
