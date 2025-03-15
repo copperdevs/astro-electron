@@ -9,7 +9,7 @@ app.whenReady().then(async () => {
 
     webPreferences: {
       preload: url.fileURLToPath(new URL("preload.mjs", import.meta.url)),
-      // devTools: false,
+      devTools: false,
     },
 
     ...(process.platform !== "darwin"
