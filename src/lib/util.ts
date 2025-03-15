@@ -1,8 +1,24 @@
-// not needed for this project they are just lowkey useful so i threw them in here
+import type { PageProps } from "./types";
 
 export function goTo(path: string) {
   window.location.href = path;
 }
+
+export function createPageProps({
+  title,
+  description,
+}: {
+  title: string;
+  description: string;
+}): PageProps {
+  return {
+    title: title,
+    description: description,
+    platform: process.platform,
+  } as PageProps;
+}
+
+// methods below aren't really needed for this project they are just lowkey useful so i threw them in here
 
 export function getRandomNumber(min: number, max: number): number {
   return Math.random() * (max - min) + min;

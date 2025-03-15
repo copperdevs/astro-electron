@@ -1,10 +1,9 @@
 ---
 interface Props {
-  pageTitle: string;
-  description: string;
+  pageProps: PageProps;
 }
 
-const { description, pageTitle } = Astro.props;
+const { pageProps } = Astro.props;
 
 import "@radix-ui/themes/styles.css";
 
@@ -12,8 +11,7 @@ import "@/styles/style.css";
 import "@/styles/app.css";
 
 import { ClientRouter } from "astro:transitions";
-
-import { nativeTheme } from "electron";
+import { type PageProps } from "@/lib";
 ---
 
 <!doctype html>
@@ -23,23 +21,17 @@ import { nativeTheme } from "electron";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <link rel="sitemap" href="/sitemap-index.xml" />
 
     <!-- page info -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{pageTitle} // astro-electron | platform: {process.platform}</title>
-    <meta name="description" content={description} />
+    <title>{pageProps.title}</title>
+    <meta name="description" content={pageProps.description} />
 
     <!-- trans ition-->
     <ClientRouter />
   </head>
 
   <body class="themeing">
-    <div
-      class=`titlebar themeing ${process.platform === "win32" ? "win" : "mac"}`
-    >
-      {pageTitle} // astro-electron | platform: {process.platform}
-    </div>
     <slot />
   </body>
 </html>

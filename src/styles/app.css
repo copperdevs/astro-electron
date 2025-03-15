@@ -1,20 +1,30 @@
 .titlebar {
-  height: 30px;
+  height: 34px;
   display: flex;
   justify-content: left;
   align-items: center;
   app-region: drag;
+  padding-top: 4px;
 }
 
-@media (prefers-color-scheme: dark) {
+.titlebar .nodrag {
+  app-region: no-drag;
+}
+
+.titlebar.themeing {
+  /* grabbed from https://www.radix-ui.com/colors for slate*/
+  background: #111113;
+  color: #edeef0;
+}
+
+/* TODO: support dark mode & light mode better. could go full css but radix-ui/themes support would be optimal (check reactlayout.tsx) */
+/* @media (prefers-color-scheme: dark) {
   .titlebar.themeing {
-    /* grabbed from https://www.radix-ui.com/colors for slate*/
     background: #111113;
     color: #edeef0;
   }
 
   body.themeing {
-    /* grabbed from https://www.radix-ui.com/colors for slate*/
     background: #111113;
     color: #edeef0;
   }
@@ -22,25 +32,28 @@
 
 @media (prefers-color-scheme: light) {
   .titlebar.themeing {
-    /* grabbed from https://www.radix-ui.com/colors for slate */
     background: #edeef0;
     color: #111113;
   }
 
   body.themeing {
-    /* grabbed from https://www.radix-ui.com/colors for slate */
     background: #edeef0;
     color: #111113;
   }
-}
+} */
 
 .titlebar.win {
-  padding-left: 8px;
+  padding-left: 12px;
 }
 
 .titlebar.mac {
   padding-left: 64px;
   padding-top: -2px;
+}
+
+.titlebar .spacer {
+  margin-left: 8px;
+  margin-right: 8px;
 }
 
 * {

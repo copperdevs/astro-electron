@@ -3,7 +3,7 @@
     ".astro/": true,
     "node_modules/": true,
     "package-lock.json": true,
-    ".wrangler/": true
+    "dist-electron": true
   },
   "workbench.editor.labelFormat": "short"
 }

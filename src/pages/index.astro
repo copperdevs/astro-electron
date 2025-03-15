@@ -1,17 +1,14 @@
 ---
-import { ReactLayout } from "@/components/layouts/ReactLayout";
-import Counter from "@/components/ui/testing/Counter";
+import IndexPage from "@/components/pages/IndexPage";
 import Layout from "@/layouts/Layout.astro";
+import { createPageProps } from "@/lib";
+
+const props = createPageProps({
+  title: "home page",
+  description: "home page description moment",
+});
 ---
 
-<Layout pageTitle="home page" description="home page description">
-  <ReactLayout client:load>
-    <div class="pagecenter scrollable">
-      <div class="contentcenter">
-        <div class="content">
-          <Counter client:load />
-        </div>
-      </div>
-    </div>
-  </ReactLayout>
+<Layout pageProps={props}>
+  <IndexPage pageProps={props} client:load />
 </Layout>
