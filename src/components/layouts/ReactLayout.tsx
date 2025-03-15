@@ -20,9 +20,16 @@ export function ReactLayout({
       hasBackground={true}
     >
       <Toaster theme="dark" richColors expand visibleToasts={16} />
-      <Titlebar props={{ title: props.appTitle, platform: props.platform }}>
-        <TitlebarDropdowns />
-      </Titlebar>
+      {props.appInfo.customTitleBar && (
+        <Titlebar
+          props={{
+            title: props.appInfo.title,
+            platform: props.platform,
+          }}
+        >
+          <TitlebarDropdowns />
+        </Titlebar>
+      )}
       {children}
     </RadixTheme>
   );

@@ -5,6 +5,13 @@ import { defineConfig } from "astro/config";
 import electron from "astro-electron";
 
 import react from "@astrojs/react";
+import { resolve } from "path";
+
+import { fileURLToPath } from "url";
+import { dirname } from "path";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,6 +30,16 @@ export default defineConfig({
     server: {
       watch: {
         usePolling: true,
+      },
+    },
+    build: {
+      rollupOptions: {
+        external: [/^node:.*/],
+      },
+    },
+    resolve: {
+      alias: {
+        "@": resolve(__dirname, "./src"),
       },
     },
   },

@@ -1,10 +1,12 @@
-import { goTo } from "@/lib";
+import { goTo, Platform } from "@/lib";
 import { Button, DropdownMenu, Flex, Separator } from "@radix-ui/themes";
 import type { ReactNode } from "react";
-import { useStore } from "@nanostores/react";
 
 // TODO: change platform from string to enum with all possible values for electron
-export type TitleBarProps = { title: string; platform: string };
+export type TitleBarProps = {
+  title: string;
+  platform: string;
+};
 
 // export type
 
@@ -18,7 +20,11 @@ export function Titlebar({
   return (
     <div
       className={`titlebar themeing drag ${
-        props.platform === "win32" ? "win" : "mac"
+        props.platform === Platform.Windows
+          ? "win"
+          : props.platform === Platform.Darwin
+          ? "mac"
+          : ""
       }`}
     >
       {props.title}

@@ -1,8 +1,5 @@
 export type PageProps = {
-  // app info
-  appTitle: string;
-
-  // app info
+  appInfo: AppInfo;
   platform: Platform;
 };
 
@@ -13,5 +10,13 @@ export enum Platform {
   Linux = "linux",
   OpenBSD = "openbsd",
   Sunos = "sunos",
-  Win32 = "win32",
+  Windows = "win32",
 }
+
+export type WindowsMaterial = "auto" | "none" | "mica" | "acrylic" | "tabbed";
+
+export type AppInfo = {
+  title: string;
+  windowsMaterial: WindowsMaterial;
+  customTitleBar: boolean;
+};

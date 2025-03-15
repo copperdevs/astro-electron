@@ -3,9 +3,9 @@ import IndexPage from "@/components/pages/IndexPage";
 import Layout from "@/layouts/Layout.astro";
 import { createPageProps } from "@/lib";
 
-const props = createPageProps({
-  appTitle: "Astro Electron",
-});
+const props = createPageProps();
+
+// import config from "virtual:my-integration/config",
 ---
 
 <Layout pageProps={props}>

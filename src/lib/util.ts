@@ -1,12 +1,13 @@
+import { AppInfo } from "@/info";
 import type { PageProps } from "./types";
 
 export function goTo(path: string) {
   window.location.href = path;
 }
 
-export function createPageProps({ appTitle }: { appTitle: string }): PageProps {
+export function createPageProps(): PageProps {
   return {
-    appTitle: appTitle,
+    appInfo: AppInfo,
     platform: process.platform,
   } as PageProps;
 }
